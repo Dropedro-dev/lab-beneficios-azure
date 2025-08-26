@@ -27,6 +27,22 @@ Com o Azure, é possível implementar políticas de conformidade, definir restri
 O gerenciamento no Azure é simplificado por meio do portal web, APIs e ferramentas de automação como o Azure CLI e o PowerShell. Isso permite aos administradores controlar, monitorar e otimizar recursos com eficiência, além de integrar processos de DevOps para maior agilidade e produtividade.
 
 
+# Armazenamento no Azure
+
+O Azure oferece diferentes opções de armazenamento em nuvem para atender desde aplicações simples até sistemas críticos que demandam alta disponibilidade e resiliência. Cada modelo de replicação possui características próprias de redundância, custo e confiabilidade, permitindo que empresas escolham a solução mais adequada conforme suas necessidades de negócio.  
+
+## LRS (Locally Redundant Storage)
+O LRS mantém **três cópias dos dados dentro de um único datacenter**. Ele garante proteção contra falhas locais de hardware, mas não protege contra indisponibilidade causada por problemas no datacenter inteiro. É a opção mais econômica e recomendada para dados não críticos ou que podem ser restaurados de outra fonte.
+
+## GRS (Geo-Redundant Storage)
+O GRS replica os dados de forma assíncrona para uma **região secundária geograficamente distante** da região primária. Assim, em caso de falha regional grave, os dados podem ser recuperados na região de backup. Ele oferece alta durabilidade e é ideal para **backup de longo prazo** e cenários de recuperação de desastres.
+
+## ZRS (Zone-Redundant Storage)
+O ZRS mantém **cópias sincronizadas dos dados em três zonas de disponibilidade diferentes** dentro da mesma região. Isso garante **alta disponibilidade e baixa latência**, já que a replicação ocorre localmente. É indicado para aplicações que precisam permanecer ativas mesmo em caso de falha em uma zona específica.
+
+## GZRS (Geo-Zone-Redundant Storage)
+O GZRS combina as vantagens do ZRS e do GRS. Ele mantém os dados replicados em **múltiplas zonas de uma região primária** e também em uma **região secundária geograficamente distante**. É a opção mais robusta e indicada para dados **extremamente críticos**, que exigem o máximo de resiliência contra falhas regionais e zoneais.
+
 # Comparativo de Armazenamento no Azure
 
 | Tipo  | Local de Replicação | Nível de Redundância | Custo | Cenário Ideal |
